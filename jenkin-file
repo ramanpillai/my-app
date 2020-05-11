@@ -9,4 +9,12 @@ node{
     sh "${mvnHome}/bin/mvn package"
    //  sh '/opt/apache-maven-3.6.3/bin/mvn package'
       }
+      
+    stage('Email Notification'){
+        mail bcc: '', body: '''Hi Raman,
+        This is test jenkin build email.
+
+        Regards,
+        DevOps Support''', cc: '', from: '', replyTo: '', subject: 'Jenkin Build ', to: 'raman.pillai@atherenergy.com'
+    }
  }
