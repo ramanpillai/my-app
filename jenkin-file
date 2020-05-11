@@ -4,6 +4,9 @@ node{
       }
     
     stage('Compile-Package'){
-      sh '/opt/apache-maven-3.6.3/bin/mvn package'
+    //Get MVN home directory
+    def mvnHome = tool name: 'MavenLocal', type: 'maven'
+    sh "${mvnHome)/bin/mvn package"
+   //  sh '/opt/apache-maven-3.6.3/bin/mvn package'
       }
  }
